@@ -12,6 +12,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  created(){
+    document.body.style.backgroundColor = "#3E444A"; // changes not only the component's background color but the entire app's background color
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
