@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/estoque">Estoque</router-link> |
+      <router-link to="/addItem">Adicionar</router-link> |
+      <router-link to="/updateItem">Atualizar</router-link> |
+      <router-link to="/pagamentos">Pagamentos</router-link> |
+      <router-link to="/recebimentos">Recebimentos</router-link> |
+      <router-link to="/formulas">Fórmulas</router-link>
     </div>
     <router-view/>
   </div>
@@ -14,7 +18,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color:white;
+  background-color: #3E444A;
 }
 
 #nav {
@@ -23,10 +28,24 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #3E444A;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #42b983;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #3E444A;  /* creates padding around scroll thumb */
 }
 </style>
