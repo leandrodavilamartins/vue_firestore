@@ -45,7 +45,8 @@ import {db} from '../firebase'
                 data : {
                     ingrediente: '',
                     quantidade : '',
-                    consumoDiario: ''
+                    consumoDiario: '',
+                    un: ''
                 },
                 msg: false
             }

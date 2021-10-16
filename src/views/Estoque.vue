@@ -19,7 +19,7 @@ import {db} from '../firebase'
 export default {
   data() {
     return {
-      fields: [{key:'ingrediente', sortable:true}, 'consumoDiario', 'consumoEsperado', 'estoque', {key:'diasEstoque', sortable:true}],
+      fields: [{key:'ingrediente', sortable:true}, 'consumoDiario', 'consumoEsperado', 'estoque', 'un',{key:'diasEstoque', sortable:true}],
       items: [],
       loading: true
     }
