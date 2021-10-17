@@ -1,5 +1,13 @@
 <template>
     <div>
+      <div v-show="loading">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <b-spinner v-if="loading" variant="success"></b-spinner>
+      </div>
         <b-container>        
             <h5>Digite Ctrl + F para pesquisar </h5>
             <br>
@@ -23,8 +31,12 @@ import {db} from '../firebase'
                     { key: 'obs', sortable: false },
                     {key: 'valor', sortable: false}
                     ],
-                items:[]
+                items:[],
+                loading: true
             }
+        },
+        beforeCreate(){
+            this.loading = true
         },
         created(){
             db.collection('vendas').get()
@@ -33,6 +45,7 @@ import {db} from '../firebase'
                 docs.forEach( doc => {
                     let item = doc.data()
                     this.items.push(item);
+                    this.loading = false;
                 })
             })
             .catch(err => {

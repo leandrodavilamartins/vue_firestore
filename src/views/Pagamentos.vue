@@ -1,8 +1,16 @@
 <template>
     <div>
-        <b-container>
         <h5>Digite Ctrl + F para pesquisar </h5>
         <br>
+        <div v-show="loading">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <b-spinner v-if="loading" variant="success"></b-spinner>
+      </div>
+      <b-container>
         <b-table striped hover :items="itemsFormatted" :fields="fields" dark=true></b-table>
         <!-- <h6>{{items}}</h6> -->
         </b-container>
@@ -16,8 +24,12 @@ import {db} from '../firebase'
         data(){
             return{
                 fields: ['data','situação','fornecedor','origem','obs','valor'],
-                items: []
+                items: [],
+                loading: true
             }
+        }, 
+        beforeCreate(){
+            this.loading =true
         },
         created(){
             db.collection('despesas').get()
@@ -26,11 +38,12 @@ import {db} from '../firebase'
                 docs.forEach( doc => {
                     let item = doc.data()
                     this.items.push(item);
+                    this.loading = false;
                 })
                 })
                 .catch(err => {
                     console.err(err);
-                })    
+                })   
         },
         computed: {
             itemsFormatted: function(){

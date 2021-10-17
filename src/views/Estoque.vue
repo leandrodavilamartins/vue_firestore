@@ -2,7 +2,12 @@
   <div class="about">
   <!-- <div class="lds-ripple"><div></div><div></div></div> -->
       <div v-show="loading">
-          <b-spinner></b-spinner>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <b-spinner v-if="loading" variant="success"></b-spinner>
       </div>
     <b-container>
       <h5>Digite Ctrl + F para pesquisar </h5>
@@ -23,11 +28,11 @@ export default {
       items: [],
       loading: true
     }
-  }, 
+  }, beforeCreate(){
+      this.loading = true;
+  },
   created() {
-    this.loading = true;
     this.fetchData();
-    this.loading = false;
   },
   methods : {
     fetchData : async function() {
@@ -37,6 +42,7 @@ export default {
         docs.forEach( doc => {
         let item = doc.data()
         this.items.push(item);
+        this.loading = false;
       })
     })
     .catch(err => {
