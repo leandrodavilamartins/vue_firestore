@@ -14,7 +14,7 @@
         </b-container>
         <br>
         <br>
-        <h5 v-if="infoItem">{{selectedItem}}</h5>
+        <!-- <h5 v-if="infoItem">{{selectedItem}}</h5> -->
         <br>
         <b-form-input v-if="formulario" placeholder="Digite a nova quantidade"></b-form-input>
         <br>

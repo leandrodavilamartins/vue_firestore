@@ -1,16 +1,39 @@
 <template>
     <div>
-      <div v-show="loading">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <b-spinner v-if="loading" variant="success"></b-spinner>
-      </div>
         <b-container>        
             <h5>Digite Ctrl + F para pesquisar </h5>
             <br>
+                <div v-show="loading">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <b-spinner v-if="loading" variant="success"></b-spinner>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
             <b-table striped hover :items="itemsFormatted" :fields="fields" sortable=true dark=true></b-table>
             <!-- <h6>{{itemsSorted}}</h6> -->
         </b-container>

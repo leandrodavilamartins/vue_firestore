@@ -5,7 +5,6 @@
         <h3>Adicionar Item</h3>
         <br>
         <br>
-        <br>
         <b-form-input placeholder="nome do item" v-model.trim="data.ingrediente" size="lg"></b-form-input>
         <br>
         <br>
@@ -15,9 +14,11 @@
         <b-form-input placeholder="consumo" v-model.trim="data.consumoDiario" size="lg"></b-form-input>
         <br>
         <br>
+        <b-form-input placeholder="unidade" v-model.trim="data.un" size="lg"></b-form-input>
+        <br>
+        <br>
         <br>
         <b-button v-on:click="saveItem" variant="success">Adicionar</b-button>
-        <br>
         <br>
         <br>
         <h5 v-show="msg">Item salvo com sucesso!</h5>
