@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <top-header></top-header>
     <div id="nav">
       <router-link to="/estoque">Estoque</router-link> |
       <router-link to="/addItem">Adicionar</router-link> |
@@ -13,9 +14,18 @@
 </template>
 
 <script>
+import TopHeader from './components/TopHeader.vue'
+
 export default {
   created(){
     document.body.style.backgroundColor = "#3E444A"; // changes not only the component's background color but the entire app's background color
+  },
+  components: {
+    'top-header': TopHeader
+  },
+  methods: {
+    signOut: function(){
+    }
   }
 }
 </script>
