@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import * as firebase from 'firebase/compat/app'
+import 'firebase/compat/auth'
 
 
 
@@ -17,8 +19,16 @@ Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+let app ; 
+
+firebase.default.auth().onAuthStateChanged(user => {
+  console.log(user);
+  if(!app){
+    app = new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  }
+})
+
