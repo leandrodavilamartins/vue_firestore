@@ -5,7 +5,7 @@
             <h3>Atualizar Item</h3>  
             <br>
             <br>
-            <b-form-select v-model='selected' :options="options" size="lg"></b-form-select>
+            <b-form-select v-model='selected' :options="options" ></b-form-select>
             <br>
             <br>
             <br>

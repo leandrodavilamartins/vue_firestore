@@ -1,10 +1,10 @@
 <template>
     <div>
-        Logged in 
+<!--         Logged in 
         <span v-if="loggedIn">Yes</span>
-        <span v-else>No</span>
+        <span v-else>No</span> -->
     <div>
-        <button @click="signOut">Sair</button>
+        <b-button @click="signOut">   Sair  </b-button>
     </div>
     </div>
 </template>
@@ -13,11 +13,6 @@
     export default {
         data(){
             return{
-            }
-        },
-        computed: {
-            loggedIn: function(){
-                return this.$store.state.loggedIn;
             }
         },
         methods: {

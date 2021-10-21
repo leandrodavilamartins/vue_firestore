@@ -1,5 +1,8 @@
 <template>
     <div>
+        <br>
+        <br>
+        <br>
         <h3>Página de acesso </h3>
         <br>
         <br>
@@ -7,11 +10,13 @@
         <br>
         <br>
         <br>
-    <div>
+    <div id="formulario">
         <form @submit.prevent="Login">
-            <input type="email" placeholder="email" v-model="email">
-            <input type="password" placeholder="password" v-model="password">
-            <button type="submit">Entrar</button>
+            <b-form-input type="email" placeholder="email" v-model="email"></b-form-input>
+            <br>
+            <b-form-input type="password" placeholder="password" v-model="password"></b-form-input>
+            <br>
+            <b-button type="submit">Entrar</b-button>
         </form>
     </div>
     </div>
@@ -46,4 +51,10 @@ import "firebase/compat/auth"
 
 <style scoped>
 
+#formulario{
+    margin:auto;
+    width: 40%;
+    color: #42b983;
+
+}
 </style>

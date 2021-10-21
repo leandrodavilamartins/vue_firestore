@@ -5,16 +5,16 @@
         <h3>Adicionar Item</h3>
         <br>
         <br>
-        <b-form-input placeholder="nome do item" v-model.trim="data.ingrediente" size="lg"></b-form-input>
+        <b-form-input placeholder="nome do item" v-model.trim="data.ingrediente" ></b-form-input>
         <br>
         <br>
-        <b-form-input placeholder="quantidade" v-model.trim="data.quantidade" size="lg"></b-form-input>
+        <b-form-input placeholder="quantidade" v-model.trim="data.quantidade" ></b-form-input>
         <br>
         <br>
-        <b-form-input placeholder="consumo" v-model.trim="data.consumoDiario" size="lg"></b-form-input>
+        <b-form-input placeholder="consumo" v-model.trim="data.consumoDiario" ></b-form-input>
         <br>
         <br>
-        <b-form-input placeholder="unidade" v-model.trim="data.un" size="lg"></b-form-input>
+        <b-form-input placeholder="unidade" v-model.trim="data.un" ></b-form-input>
         <br>
         <br>
         <br>

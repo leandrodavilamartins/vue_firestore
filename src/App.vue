@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <top-header></top-header>
-    <div id="nav">
+    <br>
+    <top-header v-show="loginState"></top-header>
+    <div id="nav" v-show="loginState">
       <router-link to="/estoque">Estoque</router-link> |
       <router-link to="/addItem">Adicionar</router-link> |
       <router-link to="/updateItem">Atualizar</router-link> |
@@ -23,8 +24,9 @@ export default {
   components: {
     'top-header': TopHeader
   },
-  methods: {
-    signOut: function(){
+  computed: {
+    loginState: function(){
+      return this.$store.state.loggedIn;
     }
   }
 }

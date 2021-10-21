@@ -16,6 +16,7 @@ export default new Vuex.Store({
       logOut: async function(state){
           try{
               const data = await firebase.default.auth().signOut();
+              sessionStorage.clear()
               state.loggedIn = false;
               this.$router.replace({name:'Home'});
               console.log(data);

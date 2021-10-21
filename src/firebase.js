@@ -4,6 +4,7 @@ import 'firebase/compat/firestore'
 const firebaseConfig = {
    //here comes the config 
 
+ 
   };
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
