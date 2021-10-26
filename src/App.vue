@@ -26,6 +26,7 @@ export default {
   },
   computed: {
     loginState: function(){
+      console.log(this.$store.state.loggedIn);
       return this.$store.state.loggedIn;
     }
   }

@@ -6,6 +6,7 @@ import updateItem from '../views/updateItem.vue'
 import Pagamentos from '../views/Pagamentos.vue'
 import Recebimentos from '../views/Recebimentos.vue'
 import Home from '../views/Home.vue'
+import Formulas from '../views/Formulas.vue'
 import * as firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 
@@ -49,6 +50,12 @@ const routes = [
     name: 'recebimentos',
     component: Recebimentos,
     meta: {requiresAuth: true}
+  },
+  {
+    path:'/formulas',
+    name: 'formulas',
+    component: Formulas,
+    meta : {requiresAuth: true}
   }
 ]
 
