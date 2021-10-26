@@ -1,9 +1,10 @@
 <template>
+    <div id="particles">
+        <Particles></Particles>
     <div>
         <br>
         <br>
         <br>
-        <h3>Página de acesso </h3>
         <br>
         <br>
         <br>
@@ -20,11 +21,13 @@
         </form>
     </div>
     </div>
+    </div>
 </template>
 
 <script>
 import * as firebase from "firebase/compat/app"
 import "firebase/compat/auth"
+import Particles from '../components/Particles.vue'
 
     export default {
     data(){
@@ -45,6 +48,9 @@ import "firebase/compat/auth"
                 console.log(err)
             }
         }
+    },
+    components:{
+        Particles
     }        
     }
 </script>
@@ -56,5 +62,11 @@ import "firebase/compat/auth"
     width: 40%;
     color: #42b983;
 
+}
+#particles{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 </style>
