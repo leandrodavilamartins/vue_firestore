@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <br>
-    <top-header v-show="loginState"></top-header>
-    <div id="nav" v-show="loginState">
+    <top-header v-show="user"></top-header>
+    <div id="nav" v-show="user">
       <router-link to="/estoque">Estoque</router-link> |
       <router-link to="/addItem">Adicionar</router-link> |
       <router-link to="/updateItem">Atualizar</router-link> |
@@ -25,9 +25,8 @@ export default {
     'top-header': TopHeader
   },
   computed: {
-    loginState: function(){
-      console.log(this.$store.state.loggedIn);
-      return this.$store.state.loggedIn;
+    user: function(){
+      return this.$store.getters.getLoginState;
     }
   }
 }

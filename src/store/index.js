@@ -8,9 +8,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-      loggedIn : false
+      loggedIn : false,
+      user: ''
   },
   getters: {
+      getLoginState: function(state){
+          return state.loggedIn;
+      }
   },
   mutations: {
       logOut: async function(state){
@@ -27,9 +31,15 @@ export default new Vuex.Store({
       },
       logIn: function(state){
           state.loggedIn = true
+      },
+      SET_USER: (state) => {
+          state.user = firebase.default.auth().currentUser;
       }
   },
   actions: {
+      setUser: (context) => {
+          context.commit("SET_USER");
+      }
   },
   modules: {
   },
