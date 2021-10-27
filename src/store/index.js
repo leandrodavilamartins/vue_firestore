@@ -17,13 +17,12 @@ export default new Vuex.Store({
       }
   },
   mutations: {
-      logOut: async function(state){
+      LOG_OUT: (state) => {
           try{
-              const data = await firebase.default.auth().signOut();
+              firebase.default.auth().signOut();
               sessionStorage.clear()
               state.loggedIn = false;
               this.$router.replace({name:'Home'});
-              console.log(data);
           }
           catch(err){
             console.log(err);
@@ -39,6 +38,9 @@ export default new Vuex.Store({
   actions: {
       setUser: (context) => {
           context.commit("SET_USER");
+      },
+      logOut: (context) => {
+        context.commit("LOG_OUT");
       }
   },
   modules: {
