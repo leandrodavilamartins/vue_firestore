@@ -11,14 +11,23 @@
         <br>
         <br>
         <br>
-    <div id="formulario">
+    <div id="formulario" v-show="!user">
         <form @submit.prevent="Login">
             <b-form-input type="email" placeholder="email" v-model="email"></b-form-input>
             <br>
             <b-form-input type="password" placeholder="password" v-model="password"></b-form-input>
             <br>
+            <br>
             <b-button type="submit">Entrar</b-button>
         </form>
+    </div>
+    <div v-show="user">
+        <h2>Você está logado</h2>
+    </div>
+    <div v-show="erro">
+        <br>
+        <br>
+        <h5 id="error_message">Usuário e/ou senha inválidos</h5>
     </div>
     </div>
     </div>
@@ -29,11 +38,13 @@ import * as firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 import Particles from '../components/Particles.vue'
 
+
     export default {
     data(){
         return {
             email : '',
-            password: ''
+            password: '',
+            erro: false
         }
     },
     methods: {
@@ -46,11 +57,16 @@ import Particles from '../components/Particles.vue'
             }
             catch(err) {
                 console.log(err)
+                this.erro = true;
             }
         }
     },
     components:{
         Particles
+    }, computed: {
+        user: function(){
+            return this.$store.getters.getLoginState;
+        }
     }        
     }
 </script>
@@ -68,5 +84,8 @@ import Particles from '../components/Particles.vue'
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+#error_message{
+    color: #F41492;
 }
 </style>
